@@ -98,7 +98,8 @@ class BaseWebSocket {
   }
 
   void send(dynamic data) {
-    if (connectionStatus == ConnectionStatus.closed) {
+    if (connectionStatus == null ||
+        connectionStatus == ConnectionStatus.closed) {
       connect();
     }
     if (socket != null && socket!.readyState == WebSocket.OPEN) {
