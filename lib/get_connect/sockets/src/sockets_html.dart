@@ -31,7 +31,7 @@ class BaseWebSocket {
   }
 
   // ignore: use_setters_to_change_properties
-  void connect() {
+  Future connect() async {
     try {
       connectionStatus = ConnectionStatus.connecting;
       socket = WebSocket(url);
